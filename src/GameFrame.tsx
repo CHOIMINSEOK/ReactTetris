@@ -1,10 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const GameFrame: React.FC = () => {
+interface GrameFrameProps {
+  frameDataTable: number[][];
+}
+
+// px
+const blockSize = 50;
+
+const GameFrame: React.FC<GrameFrameProps> = ({ frameDataTable }) => {
+  const width = frameDataTable[0].length * blockSize;
+  const height = frameDataTable.length * blockSize;
+
   return (
     <Wrapper>
-      <Frame>부엉이</Frame>
+      <Frame width={`${width}px`} height={`${height}px`}>
+        부엉이
+      </Frame>
     </Wrapper>
   );
 };
@@ -16,10 +28,15 @@ const Wrapper = styled.div`
   justify-contents: center;
 `;
 
+interface FrameProps {
+  width: string;
+  height: string;
+}
+
 const Frame = styled.div`
   border: 1px solid lightgray;
-  height: 700px;
-  width: 500px;
+  height: ${(props: FrameProps) => (props.height ? props.height : "700px")};
+  width: ${(props: FrameProps) => (props.width ? props.width : "500px")};
 `;
 
 export default GameFrame;
