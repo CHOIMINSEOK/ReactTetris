@@ -4,17 +4,16 @@ import styled from "styled-components";
 const GameFrame: React.FC = () => {
   return (
     <Wrapper>
-      {" "}
       <Frame>부엉이</Frame>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  background-color: "red";
-  flex: "column";
-  align-items: "center";
-  justify-contents: "center";
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-contents: center;
 `;
 
 const Frame = styled.div`
