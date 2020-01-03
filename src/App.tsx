@@ -2,6 +2,7 @@ import React from "react";
 import GameFrame from "./GameFrame";
 import "./App.css";
 import useMainLoopGenerator from "./useMainLoopGenerator";
+import useKey from "./useKeyboardInput";
 
 const App: React.FC = () => {
   const gameFrame = useMainLoopGenerator();

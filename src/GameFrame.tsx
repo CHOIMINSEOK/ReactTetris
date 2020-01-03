@@ -13,10 +13,6 @@ const GameFrame: React.FC<GrameFrameProps> = ({ frameDataTable }) => {
   const width = frameDataTable[0].length * blockSize;
   const height = frameDataTable.length * blockSize;
 
-  const down = useKey("ArrowDown");
-  const left = useKey("ArrowLeft");
-  const right = useKey("ArrowRight");
-
   return (
     <Wrapper>
       <Frame width={`${width}px`} height={`${height}px`}></Frame>
