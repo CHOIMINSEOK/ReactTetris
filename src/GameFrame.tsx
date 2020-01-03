@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import useKey from "./useKeyboardInput";
 
 interface GrameFrameProps {
   frameDataTable: number[][];
@@ -12,11 +13,13 @@ const GameFrame: React.FC<GrameFrameProps> = ({ frameDataTable }) => {
   const width = frameDataTable[0].length * blockSize;
   const height = frameDataTable.length * blockSize;
 
+  const down = useKey("ArrowDown");
+  const left = useKey("ArrowLeft");
+  const right = useKey("ArrowRight");
+
   return (
     <Wrapper>
-      <Frame width={`${width}px`} height={`${height}px`}>
-        부엉이
-      </Frame>
+      <Frame width={`${width}px`} height={`${height}px`}></Frame>
     </Wrapper>
   );
 };
